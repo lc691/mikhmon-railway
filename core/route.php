@@ -1,6 +1,6 @@
-<?php 
+<?php
 error_reporting(0);
-forbPHP();
+// forbPHP();
 
 // Route
 function route($m_user,$page,$s_page){
@@ -15,7 +15,7 @@ function route($m_user,$page,$s_page){
         e404();
 
     }else if (array_key_exists($page,$s_page)){
-    
+
         include_once($s_page[$page]);
 
     }else{
