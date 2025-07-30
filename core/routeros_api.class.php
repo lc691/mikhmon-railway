@@ -54,7 +54,7 @@ class RouterosAPI
         if ($this->debug) {
             // test connection
             if ($this->conn){
-                
+
                 if(strstr($text, "invalid user name or password")){
                     echo "Invalid username or password,";
 
@@ -63,9 +63,9 @@ class RouterosAPI
 
                 }else if(strstr($text, "Error")){
                     echo "Error,";
-                    
+
                 }
-            //   
+            //
             }else{
                 echo $text . "\n";
             }
