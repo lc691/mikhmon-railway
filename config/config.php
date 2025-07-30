@@ -1,2 +1,11 @@
-<?php if(substr($_SERVER["REQUEST_URI"], -10) == "config.php"){header("Location:./");}; 
-$data['mikhmon'] = array ('1'=>'mikhmon<|<mikhmon','mikhmon>|>aWNlbA==');
+// allow Railway domain + localhost
+$allowed_domains = [
+	'localhost',
+	'127.0.0.1',
+	'mikhmon-railway-production.up.railway.app' // domain Railway kamu
+];
+
+if (!in_array($_SERVER['SERVER_NAME'], $allowed_domains)) {
+	header("HTTP/1.1 403 Forbidden");
+	exit("<h1>403</h1>FORBIDDEN!<br>Sorry Mikhmon doesn't work on ".$_SERVER['SERVER_NAME'].", please open it at localhost or IP address.");
+}
